@@ -8,9 +8,9 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            max-width: 800px;
+            /* max-width: 800px; */
             margin: 0 auto;
-            padding: 20px;
+            /* padding: 20px; */
             background-color: #f4f4f4;
         }
         .container{
@@ -20,101 +20,378 @@
             text-align: center;
             color: #333;
         } */
-        .audio-container {
-            margin: 20px 0;
-            padding: 10px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
         audio {
-            width: 100%;
-            margin-top: 10px;
+            width: 20vw;
+            min-width: 100px;
+            /* margin: 10px 0; */
+            max-width: 250px;
         }
         p {
             color: #555;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.15rem; /* Increase as needed */
+        }
+        td {
+            text-align: center;
+            vertical-align: middle;
+            padding-top: 4px;
+            padding-bottom: 0px;
+            padding-left: 5px;
+            line-height: 1.1;
         }
     </style>
 </head>
 <body>
     <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
-    <div class="text-center">
-        <h1><tt>Sing2Song</tt>: An Accompaniment Generation System Based on Solo Singing</h1>
-        <p class="fst-italic mb-0"> 
-            Choi Sen Ho
-            <sup>1</sup>
-            <sup>*</sup>
-            , Chap Issac Fung
-            <sup>1</sup>
-            <sup>*</sup>
-            , Huicheng Zhang
-            <sup>1</sup>
-            <sup>*</sup>
-            , Yulun Wu
-            <sup>2</sup>
-            <sup>*</sup>
-            ,
-            <br>
-            Yueqiao Zhang
-            <sup>1</sup>
-            , Zhili Tan
-            <sup>1</sup>
-            , Qiuqiang Kong
-            <sup>2</sup>
-            , Lui Siu Hang
-            <sup>1</sup>
-            , Yaolong Jv
-            <sup>3</sup>
-            <sup>#</sup>
-        </p>
+        <div class="text-center">
+            <h1><tt>Sing2Song</tt>: 
+                <br>An Accompaniment Generation System Based on Solo Singing</h1>
+            <p class="fst-italic mb-0"> 
+                Choi Sen Ho
+                <sup>1</sup>
+                <sup>*</sup>
+                , Chap Issac Fung
+                <sup>1</sup>
+                <sup>*</sup>
+                , Huicheng Zhang
+                <sup>1</sup>
+                <sup>*</sup>
+                , Yulun Wu
+                <sup>2</sup>
+                <sup>*</sup>
+                ,
+                <br>
+                Yueqiao Zhang
+                <sup>1</sup>
+                , Zhili Tan
+                <sup>1</sup>
+                , Qiuqiang Kong
+                <sup>2</sup>
+                , Lui Siu Hang
+                <sup>1</sup>
+                , Yaolong Ju
+                <sup>3</sup>
+                <sup>#</sup>
+            </p>
+            <p>
+                <sup>1</sup> The Central Media Technology Institute, Huawei, China
+                , <br> <sup>2</sup> The Chinese University of Hong Kong, Hong Kong SAR, China
+                , <sup>3</sup> Great Bay University, Dongguan, China
+                , <br> <sup>*</sup> Equal Contribution
+                , <sup>#</sup> Corresponding Author
+            </p>
+        </div>
+        
+        <h1>
+        Project Overview:
+        </h1>
+        <div class="mb-4">
+            <p>
+                In this project, we propose an enhanced pipeline addressing three key challenges:
+            </p>
+            <ul>
+                <li><strong>Robust processing</strong> of vocal inputs with performance variations</li>
+                <li><strong>Generation of musically coherent</strong> long-form accompaniments</li>
+                <li><strong>Professional-grade audio rendering</strong> with style-aware mixing</li>
+            </ul>
+            <p>
+                Our framework acts as a mixing role of improvisational accompanist, composer, and audio engineer, integrating:
+            </p>
+            <ul>
+                <li>
+                    A robust MIR system to track beats, pitches, and musical sections of solo singing
+                </li>
+                <li>
+                    A knowledge-enhanced MIDI generator that combines music theory rules with style-specific improvisation patterns
+                </li>
+                <li>
+                    An adaptive audio synthesis engine that emulates professional mixing decisions
+                </li>
+            </ul>
+            <p>
+                This pipeline enables studio-quality musical productions from users' singing while preserving their unique expressive characteristics, representing a significant step toward personalized music generation with no input length limitation.
+            </p>
+            <p>
+                We demonstrate the effectiveness of our system through qualitative and quantitative evaluations, showing superior alignment, expressiveness, and stylistic consistency compared to state-of-the-art baselines.
+            </p>
+        </div>
+        <img src="figures/sing2song.jpeg" alt="Pipeline Diagram" style="width:100%; height:auto;">
+    </div>
+
+    <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+        <h2>Studio-Quality Singing Input Examples</h2>
         <p>
-            <sup>1</sup> The Central Media Technology Institute, Huawei, China
-            , <br> <sup>2</sup> The Chinese University of Hong Kong, Hong Kong SAR, China
-            , <br> <sup>3</sup> Great Bay University, Dongguan, China
-            , <br> <sup>*</sup> Equal Contribution
-            , <sup>#</sup> Corresponding Author
+            Our system delivers precise Music Information Retrieval (MIR) on studio-quality vocal recordings and generates professional-grade MIDI accompaniments, ensuring high fidelity and musical coherence.
         </p>
-    </div>
-    
-    <h1>
-    Project Overview:
-    </h1>
-    <p> In this project, we propose an enhanced pipeline addressing three key challenges: 
-    (1) robust processing of vocal inputs with performance variations, 
-    (2) generation of musically coherent long-form accompaniments, and 
-    (3) professional-grade audio rendering with style-aware mixing. 
-    Our framework acts as a mixing role of improvisational accompanist, 
-    composer, and audio engineer, integrating arobust MIR system to track beats, 
-    pitches, and musical sections of solo singing, a knowledge-enhanced MIDI 
-    generator that combines music theory rules with style-specific improvisation patterns, and an
-    adaptive audio synthesis engine that emulates professional mixing
-    decisions. This pipeline enables studio-quality musical productions
-    from users' singing while preserving their unique expressive characteristics, 
-    represents a significant step toward personalized music
-    generation with no input length limitation. We demonstrate the effectiveness 
-    of our system through qualitative and quantitative evaluations, 
-    showing superior alignment, expressiveness, and stylistic
-    consistency compared to state-of-the-art baselines.</p>
-    <img src="figures/sing2song.jpeg" alt="Pipeline Diagram" style="width:100%; height:auto;">
-    
-    <div class="audio-container">
-        <h3>Sample Audio 1</h3>
-        <p>Description of the first audio file.</p>
-        <audio controls>
-            <source src="audio/sample1.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-    </div>
-
-    <div class="audio-container">
-        <h3>Sample Audio 2</h3>
-        <p>Description of the second audio file.</p>
-        <audio controls>
-            <source src="audio/sample2.wav" type="audio/wav">
-            Your browser does not support the audio element.
-        </audio>
+        <table align="center">
+            <tbody>
+                <tr bgcolor="#3bbeff">
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_input.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_midi.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_output.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_output.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Name1<br>Artist1</td>
+                    <td>Name2<br>Artist2</td>
+                    <td>Name3<br>Artist3</td>
+                    <td>Name4<br>Artist4</td>
+                </tr>
+        </table>
     </div>
 
+    <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+        <h2>Amateur Singing Vocal Input Examples</h2>
+        <p>
+            Our system delivers precise Music Information Retrieval (MIR) on studio-quality vocal recordings and generates professional-grade MIDI accompaniments, ensuring high fidelity and musical coherence.
+        </p>
+        <table align="center">
+            <tbody>
+                <tr bgcolor="#3bbeff">
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_input.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_midi.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_output.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_output.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Name1<br>Artist1</td>
+                    <td>Name2<br>Artist2</td>
+                    <td>Name3<br>Artist3</td>
+                    <td>Name4<br>Artist4</td>
+                </tr>
+        </table>
+    </div>
+
+     <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+        <h2>Style Diversity Demonstration</h2>
+        <p>
+            Our system supports a wide range of musical styles, from pop and rock to RnB and ethinical, showcasing its versatility and adaptability to different genres.
+        </p>
+        <table align="center">
+            <tbody>
+                <tr bgcolor="#ffffff">
+                    <td>
+                        <font color="#000000">Pop</font>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_input.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_midi.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_output.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_output.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr bgcolor="#d6f1ff">
+                    <td>
+                        <font color="#000000">RnB</font>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_input.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_midi.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_output.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_output.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr bgcolor="#78d2ff">
+                    <td>
+                        <font color="#000000">Funk</font>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_input.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_midi.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_output.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_output.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr bgcolor="#3bbeff">
+                    <td>
+                        <font color="#000000">Ballad</font>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_input.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_midi.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_output.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_output.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr bgcolor="#149ee3">
+                    <td>
+                        <font color="#ffffff">Chinese Traditional</font>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_input.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_midi.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_output.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_output.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr bgcolor="#006191">
+                    <td>
+                        <font color="#ffffff">DJ</font>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_input.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_midi.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_output.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="audio/studio_output.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Name1<br>Artist1</td>
+                    <td>Name2<br>Artist2</td>
+                    <td>Name3<br>Artist3</td>
+                    <td>Name4<br>Artist4</td>
+                </tr>
+        </table>
+    </div>
     <p>Visit the <a href="https://github.com/your-username/your-repo">GitHub repository</a> for more details about this project.</p>
 </body>
 </html>
